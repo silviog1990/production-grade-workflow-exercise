@@ -1,0 +1,13 @@
+# docker run -p 3000:3000 -v /app/node_module -v $(pwd)/frontend:/app silviog/react-frontend
+# il primo -v serve a dire che va usato node_modules dentro il container, e che quindi 
+# quella cartella sarà già all'interno e non usare il volume mappato dopo
+FROM node:alpine
+WORKDIR /app
+COPY frontend/package.json .
+RUN npm install
+
+# visto che avvierò il container mappando il volume, questa copia è inutile
+# ma in produzione servirà quindi lo lascio come possibile spunto per altri dockerfile
+COPY frontend .
+
+CMD [ "npm", "run", "start" ]
