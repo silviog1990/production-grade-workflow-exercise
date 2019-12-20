@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -16,9 +16,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          I was changed on the feature branch
+          Learn React
         </a>
       </header>
+      <p>I was changed on the feature branch</p>
     </div>
   );
 }
