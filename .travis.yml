@@ -1,0 +1,9 @@
+# language: generic 
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t silviog1990/production-grade-workflow-exercise -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true silviog1990/production-grade-workflow-exercise npm run test
